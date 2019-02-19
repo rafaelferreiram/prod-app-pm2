@@ -4,14 +4,15 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "mocha --timeout 10000 tests/*.test.js",
+    "test": "nyc --reporter=html mocha --timeout 10000 --exit tests/*.test.js",
     "test:prod": "cross-env NODE_ENV=prod npm t",
     "prod": "cross-env NODE_ENV=prod pm2-runtime api.js"
   },
   "author": "rafael",
   "license": "ISC",
   "devDependencies": {
-    "mocha": "^5.2.0"
+    "mocha": "^5.2.0",
+    "nyc": "^13.3.0"
   },
   "dependencies": {
     "assert": "^1.4.1",
